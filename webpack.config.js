@@ -1,15 +1,17 @@
-import webpack from 'webpack';
+// import webpack from 'webpack';
+var webpack = require('webpack');
+var path = require('path');
 
 const WebpackConfig = {
   devtool: 'eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
+    // 'webpack-dev-server/client?http://localhost:8080',
+    // 'webpack/hot/only-dev-server',
     'babel-polyfill',
     './src/client/main.js',
   ],
   output: {
-    path: `${__dirname}/build/dist/`,
+    path: path.join(__dirname, 'build', 'dist'),
     filename: 'main.js',
     publicPath: '/dist/',
   },
@@ -37,4 +39,4 @@ const WebpackConfig = {
   ],
 };
 
-export default WebpackConfig;
+module.exports = WebpackConfig;
