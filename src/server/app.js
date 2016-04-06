@@ -3,7 +3,7 @@ import winston from 'winston';
 import { join, resolve } from 'path';
 
 const app = express();
-let port = 3000;
+let port = process.env.PORT || 3000;
 
 if (typeof process.env.NODE_ENV === 'undefined') {
   const bundle = require('./dev-server').default;
